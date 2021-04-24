@@ -92,7 +92,7 @@ const Project = ({ user }) => {
                     </div>
 
                     <div className='project-details-content'>
-                        <ProjectTab project={project} user={user} currentTab={currentTab} />
+                        <ProjectTab project={project} user={user} currentTab={currentTab} loadProject={loadProject} />
                     </div>
 
                 </div>

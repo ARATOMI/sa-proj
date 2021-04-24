@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react'
 
 const url_update = 'https://psycho.sudox.ru/api/Researcher/EditProject?';
 
-const ProjectNotifications = ({ project, user }) => {
+const ProjectNotifications = ({ project, user, loadProject }) => {
 
     const [isEditable, setIsEditable] = useState(false);
     const [edited, setEdited] = useState(project);
+
+    useEffect(() => {setEdited(project)}, [project])
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -44,6 +46,8 @@ const ProjectNotifications = ({ project, user }) => {
             console.log(res);
             if (res.ok) {
                 console.log('UPDATED');
+                setIsEditable(false);
+                loadProject();
             } else {
                 console.log('NOT_UPDATED');
             }

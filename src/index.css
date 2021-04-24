@@ -518,12 +518,13 @@ nav {
   flex: 1 1 10%;
   min-width: 20ch;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   margin-bottom: 2rem;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem;  
+  align-items: baseline;
 }
 
 .project-tab {
@@ -533,12 +534,26 @@ nav {
   font-size: 1.25rem;
   letter-spacing: var(--spacing);
   margin: 0 0.5rem;
+  margin-bottom: 2rem;
   transition: var(--transition);
   cursor: pointer;
   padding: 0.25rem 0;
   line-height: 1;
   outline-color: var(--clr-primary-10);
 }
+
+
+@media screen and (max-width: 992px) {
+  .project-tab {    
+    margin-bottom: 0rem;
+  }
+  .project-details-sidebar {
+    margin-bottom: 0rem;
+    padding: 1rem 0.5rem;    
+    align-items: center;
+  }
+}
+
 .project-tab:hover {
   color: var(--clr-primary-5);
   box-shadow: 0 2px var(--clr-primary-5);
@@ -569,4 +584,14 @@ nav {
 .cancel:hover {
   background-color: rgb(204, 59, 59);
   color: #f9f9f9;
+}
+
+
+.partisipant {
+  background-color: rgb(190, 202, 219);
+  justify-content: flex-start;
+  border-radius: var(--radius);
+  display: block;
+  padding: 0.5rem;
+  margin: 1rem;
 }
